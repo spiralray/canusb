@@ -28,6 +28,8 @@ This format contains
 * int32 extId
 * uint8[] data
 
+When you transmit messages in standard format, you have to set minus value to extId
+
 ##Supported baudrate
 * 10k
 * 20k
