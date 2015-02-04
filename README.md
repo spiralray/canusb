@@ -19,10 +19,14 @@ This node publish received messages on "/canrx".
 
     rostopic echo /canrx
 
-Message type is Int16MultiArray.
+#rosmsg
+This node uses original message formtat "CAN"  
+This format contains  
 
-* First element of this array is StdId
-* Second and the subsequent elements are data of received message
+* time timestamp
+* uint16 stdId
+* int32 extId
+* uint8[] data
 
 ##Supported baudrate
 * 10k
@@ -39,9 +43,7 @@ You can choose baudrate using rosparam.
 
     rosparam set /canusb/baud  500k
 
-Test of transmitting
+Sample of transmitting CAN messages
 
     rosrun canusb test.py
 
-##Known issues
-* Cannot manage extended format
